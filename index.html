@@ -1,161 +1,183 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sans De Blé</title>
-    <style>
-        body {
-	margin: 0;
-    font-family: sans-serif;
-    scroll-behavior: smooth;
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Sans De Blé</title>
+	<style>
+		html, body {
+			scroll-behavior: smooth;
+			margin: 0;
+			font-family: sans-serif;
+			font-size: 130%;
+			color: #453C35;
+			
+			/* Fondo beige/crema */
+			background-color: #ebdcc9;
 
-/* Pattern geometrico ripetibile (dimensione 40px x 40px) */
+			/* Gradienti con opacità ridotta (0.25) per rendere la trama scozzese delicata */
+			background-image:
+				linear-gradient(90deg, rgba(110, 50, 35, 0.25) 50%, transparent 50%),
+				linear-gradient(rgba(110, 50, 35, 0.25) 50%, transparent 50%);
 
-   background-color: #f7f5f0;
-    background-image: 
-        linear-gradient(90deg, transparent 50%, rgba(100, 90, 80, 0.2) 50%),
-        linear-gradient(rgba(100, 90, 80, 0.2) 50%, transparent 50%),
-        linear-gradient(45deg, transparent 50%, rgba(100, 90, 80, 0.3) 75%),
-        linear-gradient(-45deg, transparent 50%, rgba(100, 90, 80, 0.3) 75%);
-    background-size: 40px 40px;
-    background-position: 0 0, 0 0, 20px 0, 20px 0;
+			/* Dimensione del quadretto */
+			background-size: 24px 24px;
 
-        }
+			background-repeat: repeat;
+		}
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #222;
-            padding: 15px 0;
-            text-align: center;
-            z-index: 1000;
-        }
+		header {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background: #453C35;
+			padding: 15px 0;
+			text-align: center;
+			z-index: 1000;
+		}
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+		header a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 15px;
+			font-weight: bold;
+		}
 
-        section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            padding: 0 10%;
-            border-bottom: 1px solid #ccc;
-        }
+		section {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			padding: 0 10%;
+			border-bottom: 1px solid #ccc;
+		}
 
-        .content {
-            flex: 1;
-        }
+		.content {
+			flex: 1;
+		}
 
-      .sprite-box {
-    background-repeat: no-repeat;
-}
+		.sprite-box {
+			background-repeat: no-repeat;
+		}
 
-/* Definizione dei fotogrammi per l'animazione automatica a ciclo continuo (Asse X) */
-@keyframes cicla-sprite-1 {
-    0%, 45% { background-position: 0 0; }
-    55%, 100% { background-position: -400px 0; }
-}
-@keyframes cicla-sprite-2 {
-    0%, 45% { background-position: 0 0; }
-    55%, 100% { background-position: -210px 0; }
-}
-@keyframes cicla-sprite-3 {
-    0%, 45% { background-position: 0 0; }
-    55%, 100% { background-position: -208.5px 0; }
-}
-@keyframes cicla-sprite-4 {
-    0%, 45% { background-position: 0 0; }
-    55%, 100% { background-position: -250px 0; }
-}
-@keyframes cicla-sprite-5 {
-    0%, 45% { background-position: 0 0; }
-    55%, 100% { background-position: -203.5px 0; }
-}
+		/* Definizione dei fotogrammi per l'animazione automatica a ciclo continuo (Asse X) */
+		@keyframes cicla-sprite-1 {
+			0%, 45% { background-position: 0 0; }
+			55%, 100% { background-position: -400px 0; }
+		}
 
-/* Configurazione elementi e attivazione immediata dell'animazione indipendente dall'hover */
-.img-1 { 
-    width: 396.5px; height: 458px; background-image: url('img/home.png'); 
-    animation: cicla-sprite-1 1s steps(1) infinite; 
-}
-.img-2 { 
-    width: 208.5px; height: 450px; background-image: url('img/dovesiamo.png'); 
-    animation: cicla-sprite-2 1s steps(1) infinite; 
-}
-.img-3 { 
-    width: 208.5px; height: 384px; background-image: url('img/prodotti.png'); 
-    animation: cicla-sprite-3 1s steps(1) infinite; 
-}
-.img-4 { 
-    width: 208.5px; height: 358px; background-image: url('img/news.png'); 
-    animation: cicla-sprite-4 1s steps(1) infinite; 
-}
-.img-5 { 
-    width: 208.5px; height: 400px; background-image: url('img/contatti.png'); 
-    animation: cicla-sprite-5 1s steps(1) infinite; 
-}
-    </style>
+		@keyframes cicla-sprite-2 {
+			0%, 45% { background-position: 0 0; }
+			55%, 100% { background-position: -210px 0; }
+		}
+
+		@keyframes cicla-sprite-3 {
+			0%, 45% { background-position: 0 0; }
+			55%, 100% { background-position: -208.5px 0; }
+		}
+
+		@keyframes cicla-sprite-4 {
+			0%, 45% { background-position: 0 0; }
+			55%, 100% { background-position: -250px 0; }
+		}
+
+		@keyframes cicla-sprite-5 {
+			0%, 45% { background-position: 0 0; }
+			55%, 100% { background-position: -203.5px 0; }
+		}
+
+		/* Configurazione elementi e attivazione immediata dell'animazione indipendente dall'hover */
+		.img-1 { 
+			width: 396.5px;
+			height: 458px;
+			background-image: url('img/home.png'); 
+			animation: cicla-sprite-1 1s steps(1) infinite; 
+		}
+
+		.img-2 { 
+			width: 208.5px;
+			height: 450px;
+			background-image: url('img/dovesiamo.png'); 
+			animation: cicla-sprite-2 1s steps(1) infinite; 
+		}
+
+		.img-3 { 
+			width: 208.5px;
+			height: 384px;
+			background-image: url('img/prodotti.png'); 
+			animation: cicla-sprite-3 1s steps(1) infinite; 
+		}
+
+		.img-4 { 
+			width: 208.5px;
+			height: 358px;
+			background-image: url('img/news.png'); 
+			animation: cicla-sprite-4 1s steps(1) infinite; 
+		}
+
+		.img-5 { 
+			width: 208.5px;
+			height: 400px;
+			background-image: url('img/contatti.png'); 
+			animation: cicla-sprite-5 1s steps(1) infinite; 
+		}
+	</style>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <a href="#sec1">HOME</a>
-            <a href="#sec2">DOVE SIAMO</a>
-            <a href="#sec3">PRODOTTI</a>
-            <a href="#sec4">NEWS</a>
-            <a href="#sec5">CONTATTI</a>
-        </nav>
-    </header>
+	<header>
+		<nav>
+			<a href="#sec1">HOME</a>
+			<a href="#sec2">DOVE SIAMO</a>
+			<a href="#sec3">PRODOTTI</a>
+			<a href="#sec4">NEWS</a>
+			<a href="#sec5">CONTATTI</a>
+		</nav>
+	</header>
 
-    <main>
-        <section id="sec1">
-            <div class="content">
-                <h1>Sans De Blé</h1>
-                <h2>Pasticceria 100% senza glutine e senza lattosio</h2>
-            </div>
-            <div class="sprite-box img-1"></div>
-        </section>
+	<main>
+		<section id="sec1">
+			<div class="content">
+				<h1>Sans De Blé</h1>
+				<h2>Pasticceria 100% senza glutine e senza lattosio</h2>
+			</div>
+			<div class="sprite-box img-1"></div>
+		</section>
 
-        <section id="sec2">
-            <div class="content">
-                <h1>Vieni a trovarci</h1>
-                <h2>Siamo in Via Corinto 76, vicino alla Metro B, Basilica San Paolo</h2>
-            </div>
-	<div class="sprite-box img-2"></div>
-        </section>
+		<section id="sec2">
+			<div class="content">
+				<h1>Vieni a trovarci</h1>
+				<h2>Siamo in Via Corinto 76, vicino alla Metro B, Basilica San Paolo</h2>
+			</div>
+			<div class="sprite-box img-2"></div>
+		</section>
 
-        <section id="sec3">
-            <div class="content">
-                <h1>I nostri prodotti</h1>
-                <h2>Dai un'occhiata alla nostra produzione dolce e salata</h2>
-            </div>
-            <div class="sprite-box img-3"></div>
-        </section>
+		<section id="sec3">
+			<div class="content">
+				<h1>I nostri prodotti</h1>
+				<h2>Dai un'occhiata alla nostra produzione dolce e salata</h2>
+			</div>
+			<div class="sprite-box img-3"></div>
+		</section>
 
-        <section id="sec4">
-            <div class="content">
-                <h1>News ed Eventi</h1>
-                <h2>Passa per colazione, pranzo, oppure un aperitivo</h2>
-            </div>
-	<div class="sprite-box img-4"></div>
-        </section>
+		<section id="sec4">
+			<div class="content">
+				<h1>News ed Eventi</h1>
+				<h2>Passa per colazione, pranzo, oppure un aperitivo</h2>
+			</div>
+			<div class="sprite-box img-4"></div>
+		</section>
 
-        <section id="sec5">
-            <div class="content">
-                <h1>Contatti</h1>
-                <h2>Telefona o scrivici su Whatsapp</h2>
-            </div>
-            <div class="sprite-box img-5"></div>
-        </section>
-
-    </main>
+		<section id="sec5">
+			<div class="content">
+				<h1>Contatti</h1>
+				<h2>Telefona o scrivici su Whatsapp</h2>
+			</div>
+			<div class="sprite-box img-5"></div>
+		</section>
+	</main>
 
 </body>
 
