@@ -1,0 +1,51 @@
+/* Reset base e scorrimento verticale fluido */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: sans-serif; }
+
+/* Header e Navigazione */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px 0;
+    z-index: 100;
+}
+nav { display: flex; justify-content: center; gap: 30px; }
+nav a { color: #fff; text-decoration: none; font-weight: bold; }
+nav a:hover { color: #aaa; }
+
+/* Layout sezioni (Flexbox per affiancamento) */
+main { margin-top: 50px; }
+.sezione {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 50px 10%;
+    border-bottom: 1px solid #ccc;
+}
+.sezione:nth-child(even) { flex-direction: row-reverse; background: #f9f9f9; }
+.testo { flex: 1; padding: 0 20px; }
+
+/* Predisposizione Sprite CSS e Hover */
+.sprite {
+    width: 300px;
+    height: 200px;
+    /* Inserire il percorso del file sprite.png */
+    background-image: url('sprite.png');
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    transition: background-position 0.2s ease-in-out;
+}
+
+/* Coordinate iniziali e coordinate hover per ogni blocco */
+.sprite-1 { background-position: 0 0; }
+.sprite-1:hover { background-position: -300px 0; } /* Sposta lo sprite a sinistra */
+
+.sprite-2 { background-position: 0 -200px; }
+.sprite-2:hover { background-position: -300px -200px; }
+
+.sprite-3 { background-position: 0 -400px; }
+.sprite-3:hover { background-position: -300px -400px; }
