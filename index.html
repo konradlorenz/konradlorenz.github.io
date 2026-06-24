@@ -46,20 +46,19 @@
         .sprite-box {
             width: 396.5px;
             height: 458px;
-            background-image: url('img/home.png'); /* Inserire URL sprite reale */
             background-repeat: no-repeat;
-            transition: background-position 0.5s;
+            transition: background-position 0.2s;
         }
 
         /* Posizioni X per le 6 immagini */
-        .img-1 { background-position-x: 0; }
-        .img-2 { background-position-x: -300px; }
-        .img-3 { background-position-x: -600px; }
-        .img-4 { background-position-x: -900px; }
-        .img-5 { background-position-x: -1200px; }
-        .img-6 { background-position-x: -1500px; }
+	.img-1 { background-image: url('img/home.png'); background-position: 0 0; }
+	.img-2 { background-image: url('img/dovesiamo.png'); background-position: 0 0; }
+	.img-3 { background-image: url('img/prodotti.png'); background-position: 0 0; }
+	.img-4 { background-image: url('img/news.png'); background-position: 0 0; }
+	.img-5 { background-image: url('img/contatti.png'); background-position: 0 0; }
+	.img-6 { background-image: url('sprite6.jpg'); background-position: 0 0; }
 
-        /* Cambio immagine (spostamento asse Y) all'hovering della sezione */
+        /* Cambio immagine (spostamento asse X) all'hovering della sezione */
         section:hover .sprite-box {
             background-position-x: -396.5px;
         }
