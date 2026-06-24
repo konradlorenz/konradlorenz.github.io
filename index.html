@@ -1,39 +1,132 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template One-Page</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+    <title>One-Page Sprite Site</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #222;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 0 10%;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Configurazione Sprite Image */
+        /* Assi: X per le diverse sezioni, Y per stato normale (0) e hover (-300px) */
+        .sprite-box {
+            width: 300px;
+            height: 300px;
+            background-image: url('sprite.jpg'); /* Inserire URL sprite reale */
+            background-repeat: no-repeat;
+            transition: background-position 0.1s;
+        }
+
+        /* Posizioni X per le 6 immagini */
+        .img-1 { background-position-x: 0; }
+        .img-2 { background-position-x: -300px; }
+        .img-3 { background-position-x: -600px; }
+        .img-4 { background-position-x: -900px; }
+        .img-5 { background-position-x: -1200px; }
+        .img-6 { background-position-x: -1500px; }
+
+        /* Cambio immagine (spostamento asse Y) all'hovering della sezione */
+        section:hover .sprite-box {
+            background-position-y: -300px;
+        }
+    </style>
+</head>
+<body>
+
     <header>
-      <nav> <a href="#sezione1">Sezione 1</a> <a href="#sezione2">Sezione 2</a>
-        <a href="#sezione3">Sezione 3</a> </nav>
+        <nav>
+            <a href="#sec1">Sezione 1</a>
+            <a href="#sec2">Sezione 2</a>
+            <a href="#sec3">Sezione 3</a>
+            <a href="#sec4">Sezione 4</a>
+            <a href="#sec5">Sezione 5</a>
+            <a href="#sec6">Sezione 6</a>
+        </nav>
     </header>
+
     <main>
-      <div id="sezione1" class="sezione">
-        <div class="testo">
-          <h2>Titolo 1</h2>
-          <p>Testo descrittivo per la prima sezione.</p>
-        </div>
-        <div class="sprite sprite-1"></div>
-      </div>
-      <div id="sezione2" class="sezione">
-        <div class="testo">
-          <h2>Titolo 2</h2>
-          <p>Testo descrittivo per la seconda sezione.</p>
-        </div>
-        <div class="sprite sprite-2"></div>
-      </div>
-      <div id="sezione3" class="sezione">
-        <div class="testo">
-          <h2>Titolo 3</h2>
-          <p>Testo descrittivo per la terza sezione.</p>
-        </div>
-        <div class="sprite sprite-3"></div>
-      </div>
+        <section id="sec1">
+            <div class="content">
+                <h1>Titolo 1</h1>
+                <h2>Sottotitolo 1</h2>
+            </div>
+            <div class="sprite-box img-1"></div>
+        </section>
+
+        <section id="sec2">
+            <div class="content">
+                <h1>Titolo 2</h1>
+                <h2>Sottotitolo 2</h2>
+            </div>
+            <div class="sprite-box img-2"></div>
+        </section>
+
+        <section id="sec3">
+            <div class="content">
+                <h1>Titolo 3</h1>
+                <h2>Sottotitolo 3</h2>
+            </div>
+            <div class="sprite-box img-3"></div>
+        </section>
+
+        <section id="sec4">
+            <div class="content">
+                <h1>Titolo 4</h1>
+                <h2>Sottotitolo 4</h2>
+            </div>
+            <div class="sprite-box img-4"></div>
+        </section>
+
+        <section id="sec5">
+            <div class="content">
+                <h1>Titolo 5</h1>
+                <h2>Sottotitolo 5</h2>
+            </div>
+            <div class="sprite-box img-5"></div>
+        </section>
+
+        <section id="sec6">
+            <div class="content">
+                <h1>Titolo 6</h1>
+                <h2>Sottotitolo 6</h2>
+            </div>
+            <div class="sprite-box img-6"></div>
+        </section>
     </main>
-  </body>
+
+</body>
 </html>
